@@ -3,9 +3,9 @@ class Config:
     '''
     General configuration parent class
     '''
-    NEWS_API_URL='https://newsapi.org/v2/everything?language=en&sources={}&apiKey={}'
 
-    NEWS_API_BASE_URL ='https://api.themoviedb.org/3/movie/{}?api_key={}'
+
+    BASE_URL ='https://newsapi.org/v2/sources?apiKey={}'
     NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
     
 
