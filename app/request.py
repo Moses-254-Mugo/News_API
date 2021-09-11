@@ -12,8 +12,8 @@ base_url = None
 
 def configure_request(app):
     global api_key,base_url
-    api_key = app.config['NEWS_API_URL']
-    base_url = app.config['NEWS_API_BASE_URL']
+    api_key = app.config['HEAD_LINES']
+    base_url = app.config['BASE_URL']
 
 
 def get_sources():
@@ -82,5 +82,7 @@ def  process_article(article):
         urlToImage = results.get(urlToImage)
         content = results.get(content)
         publishedAt = results.get(publishedAt)
+
+    return articles_results
 
         

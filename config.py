@@ -6,7 +6,7 @@ class Config:
 
 
     BASE_URL ='https://newsapi.org/v2/everything?q=Apple&from=2021-09-11&sortBy=popularity&apiKey={}'
-    HEAD_LINENS = 'https://newsapi.org/v2/top-headlines?country=us&apiKey={}'
+    HEAD_LINES = 'https://newsapi.org/v2/top-headlines?country=us&apiKey={}'
     NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
     
 
