@@ -32,3 +32,18 @@ def get_sources():
             sources_results = process_results(sources_results)
         
     return sources_results
+
+def process_results(sources_result_list):
+    '''
+    Function that process sources
+    '''
+    sources_result_list = []
+
+    for source in sources_result_list:
+        id  = source.get(id)
+        name = source.get(name)
+        language = source.get('language')
+
+
+
+        
