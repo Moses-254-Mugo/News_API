@@ -44,6 +44,43 @@ def process_results(sources_result_list):
         name = source.get(name)
         language = source.get('language')
 
+        if language == 'en':
+            source_object = Source(id,name,language)
+            sources_result_list.append(source_object)
+    return sources_result_list
 
+def get_articles():
+    '''
+    Function that get...
+    '''
+    get_articles_url = base_url.format(api_key)
+    with urllib.request.urlopen(get_articles_url)as url:
+        get_article_data = url.read()
+        get_article_response = json.loads(get_article_data)
+
+        article_results = None
+
+        if get_article_response ['articles']:
+            articles_list =  get_article_response['articles']
+            articles_results = process_article(articles_list)
+
+        return article_results 
+
+
+def  process_article(article):
+    '''
+    '''
+    articles_results =[]
+
+    for results in article:
+        id = results.get(id)
+        name = results.get(name)
+        url = results.get(url)
+        description = results.get(description)
+        title = results.get(title)
+        author = results.get(author)
+        urlToImage = results.get(urlToImage)
+        content = results.get(content)
+        publishedAt = results.get(publishedAt)
 
         
