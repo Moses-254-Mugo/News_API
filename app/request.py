@@ -32,5 +32,3 @@ def get_sources():
             sources_results = process_results(sources_results)
         
     return sources_results
-
-

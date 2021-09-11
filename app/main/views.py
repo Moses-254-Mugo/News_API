@@ -1,20 +1,26 @@
-from flask import render_template
-from app import app
+from app.models import Source
+from flask import render_template, request
+from ..request import get_sources
+from . import main
 
 # Views
-@app.route('/')
+@main.route('/')
 def index():
 
     '''
     Root page function that returns the index page and its data
     '''
-    title = 'Home - Welcome to The best Article Review Website Online!'
-    return render_template('index.html',  title= title)
+    source = get_sources()
+    if source: 
 
-@app.route('/articles/<article_id>')
-def movie(article_id):
+        return render_template('index.html', source = source)
+
+@main.route('/article<id>')
+def article_page(id):
 
     '''
-    View article page function that returns the movie details page and its data
+    View article page function that returns the article details page and its data
     '''
-    return render_template('movie.html',id = article_id)
+    articles = article_source(id)
+    title= f'{id}'
+    return render_template('article.html',articles = articles, title = title)
