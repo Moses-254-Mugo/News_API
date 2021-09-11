@@ -1,47 +1,36 @@
 from app import app
 import urllib.request, json
-from .models import article
+from .models import Article, Source
+
+
 
 # Getting api key
-api_key = app.config['NEWS_API_KEY']
+api_key = None
 
 # Getting the movie base url
-base_url = app.config["NEWS_API_BASE_URL"]
+base_url = None
+
+def configure_request(app):
+    global api_key,base_url
+    api_key = app.config['NEWS_API_URL']
+    base_url = app.config['NEWS_API_BASE_URL']
 
 
-def get_sources(self):
-    sources = []
-    sources_url = 'https://newsapi.org/v2/sources?q={}&apiKey={}'
-    response = requests.get(sources_url)
-    if response.status_code == 200:
-        for data in response.json()['sources']:
-            sources.append(data)
-            print(sources)
-            return sources
-
-def get_articles(self, article):
-    article = []
-    article_url = 'https://newsapi.org/v2/everything?q={}&apiKey={}'
-    response = request.get(article_url)
-    if response.status_code == 200
-
-
-
-def get_article(category):
+def get_sources():
     '''
-    Function that gets the json response to our url request
+    Function that gets json response to te url request
     '''
-    get_article_url = base_url.format(category,api_key)
+    get_sources_url = base_url.format(api_key)
+    with urllib.request.urlopen(get_sources_url)as url:
+        get_sources_data = url.read()
+        get_source_response = json.loads(get_sources_data)
 
-    with urllib.request.urlopen(get_article_url) as url:
-        get_article_data = url.read()
-        get_article_response = json.loads(get_article_data)
+        sources_results = None
 
-        article_results = None
-
-        if get_article_response['results']:
-            article_results_list = get_article_response['results']
-            article_results = process_results(article_results_list)
+        if get_source_response['sources']:
+            sources_result_list = get_source_response['sources']
+            sources_results = process_results(sources_results)
+        
+    return sources_results
 
 
-    return article_results
