@@ -5,4 +5,19 @@
 <a href="{{article.url}}" target="_blank" class="btn btn-info">VIEW ON SITE</a>
 
 
-
+<div class="container">
+    <div class="card-columns">
+        {% for article in articles %}
+        <div class="card">
+            <img src="{{article.author}}" alt="image" lass="img-thumbnail">
+            <div class="card-body">
+                <h5 style="text-align: center;">{{article.author}}</h5>
+                <p>{{article.content}}</p>
+                <a href="{{article.url}}" target="_black" class="btn btn-info">
+                    <p class="card-text badge badge-success">VIEW ON SITE..</p>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
