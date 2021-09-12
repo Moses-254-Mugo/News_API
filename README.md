@@ -7,7 +7,7 @@
 Moses Kinyua Mugo
 
 ## Description
-This is a website that helps those who always misses out the news and they are frustrated since they can't keep up with current affairs. The app helps users list and preview news articles from various sources and it gets its data from the New API.
+This is a flask application that helps those who always misses out the news to catch up. The app displays news sources, get articles from specific news sources and also for news articles from various sources. 
 
 # User Story
 
