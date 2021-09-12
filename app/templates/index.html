@@ -1,4 +1,4 @@
-{% extend 'base.html'%}{% block content %}
+{% extends 'base.html'%}
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,24 +14,10 @@
     </head>
     <body>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-2"></div>
-              <div class="col-sm-8">
-                {% for headline in headlines %}
-                
-                <img src="{{headlines.image}}" alt="image"  style="width: 100%;" class="img-thumbnail"> 
-                <h4>{{source.name}}</h4>
-                <div class="card-body card-body-cascade text-center pb">
-                    <h5><strong>{{headline.author}}</strong></h5>
-                    <p class="card-text">{{headline.description}}</p>
-                    <a href="/article/{{source.id}}">
-                        <p class="cart-text badge badge-success">Read More...</p>
-                    </a>
-                    {% endfor %}
-                </div>
-              </div>
-              <div class="col-sm-2"></div>
-            </div>
-{% endblock %}
+        {% from 'macros.html' import displayarticles%}
+        {% block content %}
+        <div>{{ displayarticles(source)}}</div>
+        {% endblock %}
+          
+
 </html>

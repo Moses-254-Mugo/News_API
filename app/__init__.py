@@ -1,30 +1,26 @@
 from flask import Flask
-from config import config_options
+from config import Config
 from flask_bootstrap import Bootstrap
 
-
+app = Flask(__name__)
 
 bootstrap = Bootstrap()
 
-
 # Initializing application
-def create_app(config_name):
+def create_app():
     
-
-    app = Flask(__name__)
-
     # Creating the app configurations
-    app.config.from_object(config_options[config_name])
+    app.config.from_object(Config)
 
     # Initializing flask extensions
     bootstrap.init_app(app)
 
     # Registering the blueprint
-    from .main import main as main_blueprint
+    from .main import mose as main_blueprint
     app.register_blueprint(main_blueprint)
 
     # setting config
-    from.request import configure_request
-    configure_request(app)
+    # from .request import configure_request
+    # configure_request(app)
 
     return app

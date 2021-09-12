@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 class Config:
     '''
     General configuration parent class
@@ -33,7 +34,7 @@ class DevConfig(Config):
 
     DEBUG = True
 
-config_options = {
-'development':DevConfig,
-'production':ProdConfig
-}
+# config_options = {
+# 'development':DevConfig,
+# 'production':ProdConfig
+# }

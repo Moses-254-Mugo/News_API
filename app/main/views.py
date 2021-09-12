@@ -1,26 +1,27 @@
+import requests
 from app.models import Source
 from flask import render_template, request
-from ..request import get_sources, get_articles
-from . import main
+# from ..request import get_sources, get_articles
+from . import mose
+from ..request import get_news,get_articles
 
 # Views
-@main.route('/')
+@mose.route('/')
 def index():
 
     '''
     Root page function that returns the index page and its data
     '''
-    source = get_sources()
+    source = get_news()
     
 
-    return render_template('index.html', source)
+    return render_template('index.html', source = source)
 
-@main.route('/article<id>')
-def article_page(id):
+@mose.route('/articles')
+def article_():
 
     '''
     View article page function that returns the article details page and its data
     '''
-    articles = get_articles(id)
-    title= f'{id}'
-    return render_template('articles.html',articles = articles, title = title)
+    article =  get_articles()
+    return render_template('articles.html', article = article)

@@ -1,7 +1,15 @@
-{% macro displayMovieList(movie_list) %}
+{% macro displayarticles(articles) %}
 
-    {% for movie in movie_list %}
-        <li>{{ movie.title}}</li>
+    {% for article in articles %}
+        <li>{{ article.title}}</li>
+        <div class="card">
+            <img src="{{article.urlToImage}}" alt="" class="card-img-top">
+            <div class="card-body">
+                <p>{{article.description}}</p>
+                <p><br>{{ article.author}}</p>
+                
+            </div>
+        </div>
     {% endfor %}
 
 {% endmacro %}

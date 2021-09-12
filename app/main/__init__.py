@@ -1,5 +1,7 @@
-from . import views, errors
+# from . import views, errors
 from flask import Blueprint
-from . import views, errors
-main = Blueprint('main', __name__)
+mose = Blueprint('mose', __name__)
+from .views import *
+from .errors import *
+
 
