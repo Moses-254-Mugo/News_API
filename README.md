@@ -6,19 +6,18 @@ Moses Kinyua Mugo
 ## Description
 This is a website that helps those who always misses out the news and they are frustrated since they can't keep up with current affairs. The app helps users list and preview news articles from various sources and it gets its data from the New API.
 
-#User Story
+# User Story
 
 * User would see various news sources on the app homepage.
 * User would also be able to select news and see all new articles from selected sources in the app.
+* User would want to click on an article and read the full article on the source website.
 
 ## Setup/ Installation Requirements
 * Clone the repository
 
         https://github.com/Moses-254-Mugo/News_API
 
-* Test the app 
-
-        python3.6 manager.py 
+        cd NEWS_API
 * To run the app, in your terminal
 
         $chmod +x start.sh
