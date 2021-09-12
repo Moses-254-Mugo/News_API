@@ -1,3 +1,16 @@
+{% extend 'base.html' %}{% block content %}
+
+<style>
+    body{
+        background-color: lavender;
+    }
+    .card-columns{
+        display: grid;
+        grid-template-columns: 400px;
+        width: 100%;
+        margin: auto;
+    }
+</style>
 <img src="{{article.urlToImage}}" alt="image" class="card-img-top">
 <h5></h5> {{article.title | truncate(70)}}</h5></h5>
 {{article.description}}
@@ -21,3 +34,4 @@
         {% endfor %}
     </div>
 </div>
+{% endblock %}
