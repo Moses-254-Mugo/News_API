@@ -23,4 +23,4 @@ def article_page(id):
     '''
     articles = get_articles(id)
     title= f'{id}'
-    return render_template('article.html',articles = articles, title = title)
+    return render_template('articles.html',articles = articles, title = title)
