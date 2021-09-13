@@ -4,8 +4,10 @@ from app.models import Article, Source
 # from decouple import config
 # from request.models import Response
 
+# Getting api key
 api_key = None
 
+# Getting the movie base url
 base_url = None
 
 
@@ -19,7 +21,7 @@ def configure_request(app):
 
 def get_news():
     '''
-    Function that gets the json response to our url request
+    This is a function that gets json response to url request
     '''
     get_news_url = 'https://newsapi.org/v2/top-headlines/sources?apiKey=ff155ef8eb334dfaa680f9807dc1582e'
     with urllib.request.urlopen(get_news_url) as url:
@@ -33,11 +35,7 @@ def get_news():
 
 def process_results(news_list):
     '''
-    Function  that processes the movie result and transform them to a list of Objects
-    Args:
-        movie_list: A list of dictionaries that contain movie details
-    Returns :
-        movie_results: A list of movie objects
+    Function  that processes the source result and transform them to a list of Objects
     '''
     Articles_sources = []
     for new_item in news_list:
@@ -61,7 +59,7 @@ def process_results(news_list):
 
 def get_new_source():
     '''
-    Function that gets the json response to our url request
+    This is a function that gets json response to url request
     '''
     get_source_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey==ff155ef8eb334dfaa680f9807dc1582e'.format()
     with urllib.request.urlopen(get_source_url) as url:
@@ -75,11 +73,8 @@ def get_new_source():
 
 def process_source_results(news_list):
     '''
-    Function  that processes the movie result and transform them to a list of Objects
-    Args:
-        movie_list: A list of dictionaries that contain movie details
-    Returns :
-        movie_results: A list of movie objects
+     This is Function  that processes the source results and transform them to a Articles_results Objects
+    
     '''
     Articles_results = []
     for new_item in news_list:
