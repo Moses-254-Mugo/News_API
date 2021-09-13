@@ -1,15 +1,28 @@
-{% macro displayarticles(articles) %}
+<!-- {% macro displaySources(sources) %}
+<h1 style="text-align: center;">Current News</h1>
+<hr>
+    {% for source in sources %}
+    
+        <li></li>
+      <div class="card-group">
+            <div class="card text-white bg-dark mb-3" style="width: 70rem; margin: auto; border: 1px solid black;">
+                <img src="{{source.urlToImage}}" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h2 style="text-align: center;">{{source.name}}</h2>
+                    <p style="text-align: center;">{{source.description}}</p>
+                    <p style="text-align: center;"><br>{{ source.id}}</p>
+                    <p style="text-align: center;"><br>Country {{ source.country}}</p>
 
-    {% for article in articles %}
-        <li>{{ article.title}}</li>
-        <div class="card">
-            <img src="{{article.urlToImage}}" alt="" class="card-img-top">
-            <div class="card-body">
-                <p>{{article.description}}</p>
-                <p><br>{{ article.author}}</p>
-                
+                    <p style="text-align: center;"><a href="{{source.url}}" class="btn btn-success">
+                        Read More...
+                    </a> <span><a href="" class="btn btn-primary">View Article</a></span></p>
+
+                    
+        
+
+                </div>
             </div>
-        </div>
+     </div>
     {% endfor %}
 
-{% endmacro %}
+{% endmacro %} -->

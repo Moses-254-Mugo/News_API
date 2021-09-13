@@ -18,8 +18,11 @@ class Source:
     '''
     Source class to define Source object
     '''
-    def __init__(self,id, name, language):
+    def __init__(self,id, name, description, language, url, country):
         self.id = id
         self.name = name
+        self.description = description
         self.language = language
+        self.url = url
+        self.country = country
         

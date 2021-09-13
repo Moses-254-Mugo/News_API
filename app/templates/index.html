@@ -14,10 +14,12 @@
     </head>
     <body>
 
-        {% from 'macros.html' import displayarticles%}
+        {% from 'macros.html' import displaySources%}
         {% block content %}
-        <div>{{ displayarticles(source)}}</div>
+
+        <div>{{ displaySources(source)}}</div>
         {% endblock %}
-          
+    
+        <h1>{{source.name}}</h1>
 
 </html>

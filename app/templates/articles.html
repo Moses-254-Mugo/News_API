@@ -1,37 +1,24 @@
-{% extend 'base.html' %}{% block content %}
-
-<style>
-    body{
-        background-color: lavender;
-    }
-    .card-columns{
-        display: grid;
-        grid-template-columns: 400px;
-        width: 100%;
-        margin: auto;
-    }
-</style>
-<img src="{{article.urlToImage}}" alt="image" class="card-img-top">
-<h5></h5> {{article.title | truncate(70)}}</h5></h5>
-{{article.description}}
-
-<a href="{{article.url}}" target="_blank" class="btn btn-info">VIEW ON SITE</a>
+{% extends 'base.html' %}
+{% import 'macros_articles.html' as _articles %}
+{% block content %}
 
 
-<div class="container">
-    <div class="card-columns">
-        {% for article in articles %}
-        <div class="card">
-            <img src="{{article.author}}" alt="image" lass="img-thumbnail">
-            <div class="card-body">
-                <h5 style="text-align: center;">{{article.author}}</h5>
-                <p>{{article.content}}</p>
-                <a href="{{article.url}}" target="_black" class="btn btn-info">
-                    <p class="card-text badge badge-success">VIEW ON SITE..</p>
-                </a>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
+<div class="container" id="art">
+    <!-- call macro -->
+    {{_articles.displayArticle(article)}}
+
+       
 </div>
-{% endblock %}
+
+{% endblock%}
+
+
+
+
+
+
+
+
+
+
+
