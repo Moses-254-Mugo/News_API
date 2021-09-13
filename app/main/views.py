@@ -1,9 +1,8 @@
-import requests
+# import request
 from app.models import Source
-from flask import render_template, request
-# from ..request import get_sources, get_articles
+from flask import render_template
+from ..request import get_news,get_new_source
 from . import mose
-from ..request import get_news,get_articles
 
 # Views
 @mose.route('/')
@@ -23,5 +22,5 @@ def article_():
     '''
     View article page function that returns the article details page and its data
     '''
-    article =  get_articles()
+    article =  get_new_source()
     return render_template('articles.html', article = article)

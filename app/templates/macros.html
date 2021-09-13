@@ -1,4 +1,4 @@
-<!-- {% macro displaySources(sources) %}
+{% macro displaySources(sources) %}
 <h1 style="text-align: center;">Current News</h1>
 <hr>
     {% for source in sources %}
@@ -15,7 +15,7 @@
 
                     <p style="text-align: center;"><a href="{{source.url}}" class="btn btn-success">
                         Read More...
-                    </a> <span><a href="" class="btn btn-primary">View Article</a></span></p>
+                    </a> <span><a href="{{source.url}}" class="btn btn-primary">View Article</a></span></p>
 
                     
         
@@ -25,4 +25,4 @@
      </div>
     {% endfor %}
 
-{% endmacro %} -->
+{% endmacro %}

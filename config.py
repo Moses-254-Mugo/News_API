@@ -1,5 +1,4 @@
 import os
-from dotenv import load_dotenv
 class Config:
     '''
     General configuration parent class
@@ -10,8 +9,6 @@ class Config:
     HEAD_LINES = 'https://newsapi.org/v2/top-headlines?country=us&apiKey={}'
     NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
     
-
-
 
 
 class ProdConfig(Config):
@@ -34,7 +31,7 @@ class DevConfig(Config):
 
     DEBUG = True
 
-# config_options = {
-# 'development':DevConfig,
-# 'production':ProdConfig
-# }
+config_options = {
+'development':DevConfig,
+'production':ProdConfig
+}
